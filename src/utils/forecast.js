@@ -9,7 +9,7 @@ const forecast = (latitude, longitude, callback) => {
         } else if (body.error) {
             callback('Error with your coordinates. Try another search.', undefined);
         } else {
-            callback(undefined, body.daily.data[0].summary + 'It is currently ' + body.currently.temperature + 'C degree. There is a ' + body.currently.precipProbability + '% change of rain');
+            callback(undefined, body.daily.data[0].summary + 'It is currently ' + body.currently.temperature + 'C degree.' + ' The temperature feels like ' + body.currently.apparentTemperature + 'C degree.' + ' There is a ' + body.currently.precipProbability + '% change of rain.');
         }
     });
 }
